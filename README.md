@@ -11,11 +11,11 @@
 
 For example:
 
-**json1****  **** zomato\_20190609.csv**
+**json1**** -> **** zomato\_20190609.csv**
 
-**json2****  **** zomato\_20190610.csv**
+**json2**** -> **** zomato\_20190610.csv**
 
-**json3****  **** zomato\_20190611.csv**
+**json3**** -> **** zomato\_20190611.csv**
 
 json4 zomato\_20190612.csv
 

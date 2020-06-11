@@ -1,0 +1,60 @@
+USE rahul_database;
+
+INSERT INTO zomato_summary_rahul(
+				`restaurant id`,
+				`restaurant name`,
+				`country code`,
+				`city`,
+				`address`,
+				`locality`,
+				`locality verbose`,
+				`longitude`,
+				`latitude`,
+				`cuisines`,
+				`average cost for two`,
+				`currency`,
+				`has table booking`,
+				`has online delivery`,
+				`is delivering now`,
+				`switch to order menu`,
+				`price range`,
+				`aggregate rating`,
+				`rating text`,
+				`votes`,
+				`p_filedate`,
+				`p_country_name`,
+				`m_cuisines`,
+				`m_rating_colour`,
+				`create_datetime`,
+				`user_id`) 
+				SELECT  
+				s.`restaurant id`,
+				nvl( s.`restaurant name`,'NA'),
+				s.`country code`,
+				nvl(s.`city`, 'NA'),
+				nvl(s.`address`, 'NA'),
+				nvl( s.`locality`,'NA'),
+				nvl(s.`locality verbose`,'NA'),
+				nvl( s.`longitude`, 'NA'), 
+				nvl( s.`latitude`, 'NA'), 
+				nvl(s.cuisines`,'NA'),
+				s.`average cost for two`,
+				nvl(s.`currency`,'NA'),
+				s.`has table booking`,
+				s.`has online delivery`,
+				s.`is delivering now`,
+				s.`switch to order menu`,
+				s.`price range`,
+				nvl(s.`aggregate rating`,'NA'),
+				nvl(s.`rating text`,'NA'),
+				nvl(s.`votes`,'NA'),
+				s.`filedate`,
+				nvl(d.`country`,'NA'),
+				case when cuisines like any ('%Indian%', '%Andhra%', '%Hyderabadi%', '%Goan%', '%Bengali%', '%Bihari%', '%Chettinad%', '%Gujarati%','%Rajasthani%', '%Kerala%',
+				'%Maharashtrian%','%Mangalorean%', '%Mithai%','%Mughlai%') then 'Indian' else 'World Cuisines' end as m_cuisines, case when `aggregate rating` between 1.9 and 2.4 and
+				`rating text` = 'Poor' then 'Red' when `aggregate rating` between 2.5 and 3.4 and `rating text`='Average' then 'Amber' when `aggregate rating` between 3.5 and 3.9 and
+				`rating text`='Good' then 'Light Green' when `aggregate rating` between 4.0 and 4.4 and `rating text`='Very Good' then 'Green' when `aggregate rating` between 4.5 and 5 and
+				`rating text`='Excellent' then 'Gold' when `aggregate rating` = 0 and `rating text`='Not rated' then 'NA'  end as m_rating_colour, from_unixtime(unix_timestamp()),
+				logged_in_user() from zomato_rahul s, dim_country_rahul d where s.`country code` = d.`country code`;
+
+INSERT OVERWRITE TABLE zomato_summary_rahul SELECT DISTINCT * FROM zomato_summary_rahul;

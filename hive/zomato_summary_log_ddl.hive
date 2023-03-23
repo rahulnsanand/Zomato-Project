@@ -1,9 +1,0 @@
-USE rahul_database;
-
-CREATE TABLE zomato_summary_log_rahul(
-				`Job id` int,
-				`Job step` string,
-				`spark submit command` string,
-				`Job Start time` timestamp,
-				`Job End time` timestamp,
-				`Job status` string);

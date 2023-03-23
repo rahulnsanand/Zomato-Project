@@ -1,4 +1,0 @@
-use rahul_database;
-
-LOAD DATA INPATH 'hdfs://theflopguyproductions/user/rahul.anand/zomato_etl_rahul.anand/zomato_ext/dim_country/country_code.csv'
-OVERWRITE INTO TABLE dim_country_rahul;

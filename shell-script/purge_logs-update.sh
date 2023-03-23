@@ -6,6 +6,7 @@ current_date=$(date +"%d%m%Y")
 
 echo "Purging Begins"
 
+
 #Looping through the list of all files in the path
 for file in `ls $log_path`;
 do

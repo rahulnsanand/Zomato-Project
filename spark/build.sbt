@@ -11,8 +11,10 @@ libraryDependencies += "org.apache.hadoop" % "hadoop-common" % "2.6.0"
 libraryDependencies += "org.apache.commons" % "commons-io" % "1.3.2"
 libraryDependencies += "org.apache.hadoop" % "hadoop-hdfs" % "2.6.0"
 
+
 //ColoredFontFunctionality
 libraryDependencies +="org.backuity" %% "ansi-interpolator" % "1.1" % "provided"
+
 
 //LoggingFunctionality
 libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"

@@ -9,6 +9,7 @@ spark_submit_value="spark-submit --driver-java-options -Dlog4j.configuration=fil
 mail_list="rahulanand2206@gmail.com rahul.anand@com"
 module_nomen="Module3"
 
+
 #Mail function to send mail on status updation
 function mail(){
 	module_name=$1

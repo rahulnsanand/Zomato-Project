@@ -5,6 +5,7 @@ file_status_path=/home/rahul.anand/zomato_etl/logs/module_1_status.log
 mail_list="rahulanand2206@gmail.com rahul.anand@com"
 module_nomen="Module1"
 
+
 #Mail function to send mail on status updation
 function mail(){
 	module_name=$1

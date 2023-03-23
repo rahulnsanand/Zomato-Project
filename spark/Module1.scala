@@ -16,6 +16,7 @@ import org.apache.spark.sql._
 import java.io._
 import org.backuity.ansi.AnsiFormatter.FormattedHelper
 
+
 object Main {
 
 //val logger = Logger("Converter Log")

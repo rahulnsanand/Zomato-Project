@@ -10,7 +10,6 @@ import java.sql.Timestamp
 import java.text.SimpleDateFormat
 import org.backuity.ansi.AnsiFormatter.FormattedHelper
 
-
 object Main{
 
 	//Main Function begins here

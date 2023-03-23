@@ -12,6 +12,7 @@ import org.backuity.ansi.AnsiFormatter.FormattedHelper
 import java.io.File
 import java.nio.file.{Files => NioFiles, Paths => NioPaths, StandardCopyOption}
 
+
 object Main {
 
 	//Function to return list of files and extension in given directory

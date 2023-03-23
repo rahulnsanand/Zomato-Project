@@ -13,6 +13,7 @@ function usage() {
 	exit 1
 }
 
+
 #Runs a case statement on the argument given by user
 case $opt in
 
